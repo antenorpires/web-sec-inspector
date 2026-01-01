@@ -17,20 +17,24 @@ FROM base AS build
 
 # Install packages needed to build node modules
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3 && \
+    apt-get install --no-install-recommends -y \
+        build-essential
+        node-gyp
+        pkg-config
+        python-is-python3 && \
     apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    proxychains4 \
-    nmap \
-    dnsutils \
-    tor \
-    sudo \
- && rm -rf /var/lib/apt/lists/*
+        curl \
+        proxychains4 \
+        nmap \
+        dnsutils \
+        tor \
+        sudo \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install node modules
 COPY package-lock.json package.json ./
-RUN npm install --only=production && \
-    npm ci
+# RUN npm install --only=production && \
+RUN npm ci
 
 # Copy application code
 COPY . .
@@ -43,4 +47,5 @@ COPY --from=build /app /app
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD [ "service", "tor", "start", "&&", "npm", "run", "start" ]
+# CMD [ "service", "tor", "start", "&&", "npm", "run", "start" ]
+CMD [ "npm", "run", "start" ]
