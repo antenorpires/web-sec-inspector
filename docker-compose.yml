@@ -3,7 +3,7 @@ services:
   app:
     container_name: security-scanner
     build:
-      dockerfile: docker/Dockerfile
+      dockerfile: Dockerfile
       context: ./
     environment:
       NODE_OPTIONS: '--max_old_space_size=2048'
