@@ -21,15 +21,16 @@ RUN apt-get update -qq && \
         build-essential
         node-gyp
         pkg-config
-        python-is-python3 && \
-    apt-get update && apt-get install -y --no-install-recommends \
-        curl \
-        proxychains4 \
-        nmap \
-        dnsutils \
-        tor \
-        sudo \
-    && rm -rf /var/lib/apt/lists/*
+        python-is-python3 
+    # && \
+    # apt-get update && apt-get install -y --no-install-recommends \
+    #     curl \
+    #     proxychains4 \
+    #     nmap \
+    #     dnsutils \
+    #     tor \
+    #     sudo \
+    # && rm -rf /var/lib/apt/lists/*
 
 # Install node modules
 COPY package-lock.json package.json ./
