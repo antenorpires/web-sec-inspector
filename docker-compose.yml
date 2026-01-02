@@ -1,4 +1,4 @@
-version: "3"
+# version: "3"
 services:
   app:
     container_name: security-scanner
@@ -6,8 +6,8 @@ services:
       dockerfile: Dockerfile
       context: ./
     environment:
-      NODE_OPTIONS: '--max_old_space_size=2048'
       TZ: 'America/Fortaleza'
+      NODE_OPTIONS: '--max_old_space_size=2048'
     working_dir: /app
     volumes:
       - .:/app
