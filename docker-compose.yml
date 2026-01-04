@@ -1,0 +1,23 @@
+# version: "3"
+services:
+  app:
+    container_name: security-scanner
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    environment:
+      TZ: 'America/Fortaleza'
+      NODE_OPTIONS: '--max_old_space_size=2048'
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
+    networks:
+      - network
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+networks:
+  network:
+    driver: bridge

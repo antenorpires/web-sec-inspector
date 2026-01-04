@@ -1,0 +1,7 @@
+# Directories
+node_modules/
+
+# Files
+*.txt
+*.env
+*.log

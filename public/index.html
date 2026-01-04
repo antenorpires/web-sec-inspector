@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security Scanner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🔍 Security Scanner</h1>
+  <input id="urlInput" type="text" placeholder="Enter the domain e.g. example.com" />
+  <div>
+    <button onclick="scan('fast')">⚡ Basic Scan</button>
+    <button onclick="scan('low')">🧠 Expert Scan</button>
+  </div>
+  <div id="loading" style="display:none; margin-top:10px;">⏳ Analyzing...</div>
+  <div id="details" class="results"></div>
+  <div id="stats" class="results"></div>
+  <div id="results" class="results"></div>
+  <script src="script.js"></script>
+</body>
+</html>
