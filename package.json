@@ -1,19 +1,20 @@
 {
-  "name": "security-scanner",
-  "version": "1.0.0",
+  "name": "web-sec-inspector",
+  "version": "0.1.0",
+  "description": "Passive web application security inspection tool focused on attack surface analysis and AppSec reporting.",
   "main": "src/app.js",
-  "keywords": [],
-  "author": "Antenor Pires",
-  "license": "UNLICENSED",
-  "description": "",
   "type": "module",
+  "author": "Antenor Pires",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/app.js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^5.1.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.10"
   }
 }
